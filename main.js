@@ -5,16 +5,7 @@ const resultMath = {
 }
 console.log(resultMath);
 
-const resultFs = require('./mudules/fs_practice')
-console.log(resultFs)
+console.log('--------os-practice--------')
+const resultOs = require('./mudules/os_practice')
+console.log(resultOs)
 
-
-// const fs = require('fs');
-//
-// fs.readFile('readme.txt', 'utf8', (err, data) => {
-//     if (err) {
-//         console.error("Помилка читання файлу:", err);
-//         return;
-//     }
-//     console.log("Вміст файлу readme.txt:", data);
-// });
