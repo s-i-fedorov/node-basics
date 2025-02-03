@@ -1,16 +1,19 @@
 {
   "name": "basics",
   "version": "1.0.0",
-  "description": "<div _ngcontent-hillel_lms_server-c3686221612=\"\" class=\"homework__info-content ng-tns-c3686221612-9 ng-star-inserted\" style=\"\"><app-quill-highlight-view _ngcontent-hillel_lms_server-c3686221612=\"\" _nghost-hillel_lms_server-c3627356489=\"\" class=\"ng-tns-c3686221612-9 ng-star-inserted\"><quill-view-html _ngcontent-hillel_lms_server-c3627356489=\"\" class=\"quill-highlight-view__quill quill-no-margin ng-star-inserted\"><div class=\"ql-container ql-snow ngx-quill-view-html\"><div class=\"ql-editor\"><p>Створи простий веб-сервер на базі Express.js, який буде виконувати такі вимоги:</p><ol><li><strong>Ініціалізація проєкту та встановлення Express.js</strong></li></ol><ul><li class=\"ql-indent-1\">Ініціалізуй новий проєкт командою <code>npm init -y</code>.</li><li class=\"ql-indent-1\">Встанови Express.js за допомогою <code>npm install express</code>.</li></ul><ol><li><strong>Запуск сервера</strong></li></ol><ul><li class=\"ql-indent-1\">Створи файл <code>app.js</code> і налаштуй сервер так, щоб він слухав на порту 3000.</li></ul><ol><li><strong>Реалізація маршрутів</strong></li><li><strong>GET /</strong></li></ol><ul><li class=\"ql-indent-1\">Повертає текст: <code>Привіт з Express.js!</code></li></ul><ol><li><strong>GET /user/:id</strong></li></ol><ul><li class=\"ql-indent-1\">Повертає текст із підставленим <code>:id</code> (наприклад, \"Користувач з ID: 123\" при зверненні на <code>/user/123</code>).</li></ul><ol><li><strong>POST /submit</strong></li></ol><ul><li class=\"ql-indent-2\">Використовуй <code>express.json()</code> для парсингу JSON-тіла запиту.</li><li class=\"ql-indent-2\">Отримай з тіла запиту (<code>req.body</code>) значення <code>name</code> та <code>email</code>.</li><li class=\"ql-indent-1\">Поверни відповідь у форматі: <code>\"Отримано дані: Ім'я - NAME, Електронна пошта - EMAIL\"</code>, підставивши відповідні значення.</li></ul><ol><li><strong>Обробка помилок (middleware)</strong></li></ol><ul><li class=\"ql-indent-1\">Додай middleware, який виводить у консоль метод та URL кожного запиту.</li><li class=\"ql-indent-1\">Додай обробник помилок 404 (Not Found), щоб при зверненні до неіснуючого маршруту повертало відповідь <code>\"Сторінка не знайдена\"</code>.</li></ul><ol><li><strong>Перевір роботу</strong></li></ol><ul><li class=\"ql-indent-1\">Запусти сервер командою <code>node app.js</code>.</li><li class=\"ql-indent-1\">У браузері чи через Postman перевір маршрути <code>GET /</code>, <code>GET /user/:id</code> та <code>POST /submit</code>.</li></ul></div></div></quill-view-html><!----><!----><!----><!----><!----><!----><!----></app-quill-highlight-view><!----><!----><!----><!----><!----><!----><!----></div>",
+  "description": "hw_23",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "private": true,
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.9.6",
+    "nodemon": "^3.1.9"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/s-i-fedorov/node-basics.git"
