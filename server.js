@@ -1,39 +1,26 @@
-const express = require('express')
-const app = express()
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const connectDB = require('./config/db');
+const productRoutes = require('./routes/productRoutes.js');
 
-app.use(express.json())
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+// Підключення до бази
+connectDB();
 
 app.use((req,res,next)=>{
-    console.log(`Method: ${req.method},\n URL: ${req.url}`);
+    const body = JSON.stringify(req.body)
+    console.log(`Method: ${req.method},\n URL: ${req.url},\n Body: ${body}`);
     next()
 })
 
-app.get('/', (req, res) => {
-    res.send('Hello from Express.js');
+// Роутинг
+app.use('/api/products', productRoutes);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
-
-app.get('/user/:id', (req, res) => {
-    const userId = req.params.id
-    res.send(`You asked user with id = ${userId}`);
-});
-
-app.post('/submit', (req, res) => {
-    const { name, email } = req.body;
-    res.send(`Отримано дані: Ім'я - ${name},\n 
-        Електронна пошта - ${email}`);
-});
-
-app.use((req,res,next)=>{
-    res.status(404).send('Page not found');
-    next()
-})
-
-app.use((req,res,next)=>{
-    res.status(500).send('Something was wrong');
-    next()
-})
-
-app.listen(3000, () => {
-    console.log('Сервер працює на порту 3000');
-});
-

@@ -4,10 +4,14 @@
   "description": "hw_23",
   "main": "app.js",
   "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "start-mongo": "net start MongoDB",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "private": true,
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongodb": "^6.13.0",
